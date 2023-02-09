@@ -363,7 +363,71 @@ used to count the number of child elements in a parent element
 
 
 
-examples--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+-----------------------------------------------------------NodeValue-----------------------------------------------------------------------------------
+
+
+            
+            
+The nodeValue property specifies the value of a node.
+
+    nodeValue for element nodes is null
+    nodeValue for text node is text itself
+
+
+    
+    
+
+                ----------example with element node------------
+
+
+
+<p id="demo">this is a paragraph</p>
+
+<script>
+let y =document.getElementById("demo").firstChild.nodeValue;
+console.log(y);// will print null
+</script>
+
+
+
+
+              ----------example with text node------------
+
+
+
+<p id="demo">this is a paragraph</p>
+
+<script>
+let y =document.getElementById("demo").firstChild.nodeValue;
+console.log(y);// will print the text inside the <p>
+</script>
+
+
+
+-----------------------------------------------------------nodeName-----------------------------------------------------------------------------------
+
+show the name of the node
+
+<h1 id="demo">this is a heading</h1>
+
+<script>
+let y =document.getElementById("demo").nodeName;
+document.write(y); //wil print H1 in document
+
+
+
+
+
+
+
+
+---------------------------------------------------examples by w3school -----------------------------------------------------------------------------------
 
 
 
@@ -395,7 +459,7 @@ examples------------------------------------------------------------------------
      -------or you can do this---------
       
       
-
+         
 
       
          <h1 id="id01">My First Page</h1>
@@ -404,6 +468,90 @@ examples------------------------------------------------------------------------
     <script>
     document.getElementById("id02").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
     </script>
+
+
+
+
+
+
+
+
+------------------------------------------------------------DOM Root Nodes----------------------------------------------------
+
+
+
+
+
+            -------------------document.body-------------------
+    
+// executes the whole body of the HTML document
+
+    <script>
+        console.log(document.body)       //this will print the whole body as object 
+        console.log(typeof document.body)  // object
+    </script>
+
+
+
+
+
+           --------------document.documentElement--------------
+
+
+ <script>
+        console.log(document.documentElement)       // will print the HTML page as object
+        console.log(typeof document.documentElement)  //object
+    </script>
+
+
+
+
+
+
+examples--------------------------------
+
+
+
+    <h2>JavaScript HTMLDOM</h2>
+<p>Displaying document.body </p>
+
+<p id="demo"></p> 
+//this will contain the both elements present in the body
+
+<script>
+document.getElementById("demo").innerHTML = document.body.innerHTML ;
+</script>
+
+
+
+
+
+
+// same for document.documentElement
+
+
+
+
+
+
+   <h2>JavaScript HTMLDOM</h2>
+<p>Displaying document.documentElement</p>
+
+<p id="demo"></p> 
+//this will contain the both elements present in the body
+
+<script>
+document.getElementById("demo").innerHTML = document.documentElement.innerHTML ;
+</script>
+
+
+
+
+
+
+
+
+
 
 
 
