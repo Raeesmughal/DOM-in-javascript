@@ -6,7 +6,9 @@ navigation between the nodes
 
 ------------------------------------------------------------parentNode----------------------------------------------------
 
-
+//parent node and parent element are very similar to each other 
+//when you want to access a parent with parentNode it should be a node (all the tags are nodes)
+// but when you want to access the parent with parentElement it should be an element
 
 
 <div id="div1">
@@ -45,7 +47,7 @@ navigation between the nodes
         <script>
             let gettingchild = document.getElementById('first-div').childNodes[1];
 
-            console.log(gettingchild)//this will print an object h1 in the console
+            console.log(gettingchild)//this will print an object <h1> in the console
             console.log(typeof gettingchild);//this will give the type of the childNode (which is object)
         </script>
 
@@ -67,9 +69,22 @@ navigation between the nodes
 
 
 
+------------childNodes------or------children-------------
+    
+    
+    <div id="div1">
+        <h1>this is heading</h1>
+        <p>this is a paragraph</p>
+        <span>this is a span</span>
+        <div>this is a div</div>
+        </div>
+        <script>
+            let b =document.getElementById('div1').childNodes
+            console.log(b)    // this will print an object of all the children of div#div1
+        </script>
 
 
-
+//childNodes and children has same working but children ignores the spaces between the elements while childNodes also prints the spaces as textNode
 
 
 
@@ -168,12 +183,13 @@ console.log(printing);//will print null because there is a text node inside the 
 
 
 
-<h1 id="heading" >this is a heading</h1>
-<script>
-  let printing = document.getElementById('heading').firstChild;
-console.log(printing);//will print null because there is a text node inside the heading, not the element node
-console.log(typeof printing) //this is object
-  </script>
+    <h1 id="heading" >this is a heading</h1>
+    <script>
+      let printing = document.getElementById('heading').firstChild;
+    console.log(printing);//will print text node in the form of object
+    console.log(typeof printing) //this is object
+      </script>
+    
 
 
 
@@ -271,12 +287,12 @@ selects the next sibling, dont ignore the spaces
 
 
 
+
+
+
+
+
 to overcome this, we use:
-
-
-
-
-
 ------------------------------------------------------------nextElementSibling----------------------------------------------------
 
 
@@ -390,7 +406,7 @@ The nodeValue property specifies the value of a node.
 <p id="demo">this is a paragraph</p>
 
 <script>
-let y =document.getElementById("demo").firstChild.nodeValue;
+let y =document.getElementById("demo").nodeValue;
 console.log(y);// will print null
 </script>
 
@@ -508,7 +524,7 @@ document.write(y); //wil print H1 in document
 
 
 
-examples--------------------------------
+-------------------------------------------------------------------Examples----------------------------------------------------------------------------------
 
 
 
@@ -543,6 +559,75 @@ document.getElementById("demo").innerHTML = document.body.innerHTML ;
 <script>
 document.getElementById("demo").innerHTML = document.documentElement.innerHTML ;
 </script>
+
+
+
+
+
+
+
+
+
+
+<div>
+    <h1>this is a heading</h1>
+</div>
+
+
+<script>
+        let a =document.body.firstElementChild.firstElementChild
+console.log(a)  //this will print the <h1> in the form of object
+console.log(typeof a)   // object
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <h1>this is a heading</h1>
+    </div>
+
+
+    <script>
+        let a = document.body
+        console.log(a)           //will print <body> in the form of object               
+        console.log(typeof a)    // object
+        let b =a.firstElementChild
+        console.log(b))           //will print <div> in the form of object
+        console.log(typeof b)    // object
+        let c = b.firstElementChild
+        console.log(c))           //will print <h1> in the form of object
+        console.log(typeof c)    // object
+        let d = c.childNodes[0]
+        console.log(d))           //will print textNode inside the <h1> in the form of object
+        console.log(typeof d)    // object
+        let e = d.nodeValue
+        console.log(e))           //will print text in the form of string
+        console.log(typeof e)    // string
+    </script>
+
+// this only text can also be executed as
+
+
+    <div>
+        <h1>this is a heading</h1>
+    </div>
+    <script>
+     let a =document.body.firstElementChild.firstElementChild.childNodes[0].nodeValue
+     console.log(a)                //pri9nts the text in <h1>
+     console.log(typeof a)         //string
+    </script>
+
+
+
+
 
 
 
