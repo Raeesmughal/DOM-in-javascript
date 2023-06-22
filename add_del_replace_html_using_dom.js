@@ -321,7 +321,24 @@ Set the deep parameter to true if you also want to clone descendants (children).
     c.replaceChild(b,c.firstElementChild)
 
 
-  
+
+
+
+// example:
+
+
+    <div class="one">
+      <div class="two">first inside</div>
+      <div class="two">second inside</div>
+      <div class="two">third inside</div>
+    </div>
+  <script>
+    let a = document.getElementsByClassName('one')[0];
+    let b = a.cloneNode(true);
+
+    let c = a.children[0];
+    a.replaceChild(b,c)
+  </script>
 
 
 
