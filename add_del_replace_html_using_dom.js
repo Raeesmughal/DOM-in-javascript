@@ -297,12 +297,31 @@ parent.removeChild(child)
 
 
 
+__________________________________________________________________________cloneNode()______________________________________________________________________________
+
+
+(w3school)
+
+The cloneNode() method creates a copy of a node, and returns the clone.
+
+The cloneNode() method clones all attributes and their values.
+
+Set the deep parameter to true if you also want to clone descendants (children).
 
 
 
 
+  // example : how to use cloneNode():
 
 
+    let a = document.getElementById('dino')
+    let b = a.cloneNode(true);
+
+    let c = document.getElementById('ul');
+    c.replaceChild(b,c.firstElementChild)
+
+
+  
 
 
 
